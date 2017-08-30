@@ -8,6 +8,8 @@ services:
             - .:/project
         ports:
             - "8080:8080"
+        command: ["npm","start"]
+        working_dir: /project
 
 networks:
     default:
