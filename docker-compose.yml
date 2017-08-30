@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    nodejs:
+        container_name: nodejs-user-admin
+        image: node:8
+        volumes:
+            - .:/project
+        ports:
+            - "8080:8080"
+
+networks:
+    default:
+        external:
+            name: user-admin
