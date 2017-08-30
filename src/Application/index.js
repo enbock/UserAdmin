@@ -5,7 +5,7 @@ import Locale from './Locale';
 export default Object.assign(
   Container,
   {
-    Style: Style,
-    Locale: Locale
+    Locale: Locale,
+    Style: Style
   }
 );

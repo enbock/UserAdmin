@@ -2,11 +2,13 @@ import React from 'react';
 import "./Style/Login.less";
 import "./Style/SignInForm.less";
 import SignInForm from "./View/SignInForm";
+import {connect} from "react-redux";
+import StoreAwareComponent from "../Shared/StoreAwareComponent";
 
 /**
  * Application.
  */
-class LoginContainer extends React.Component {
+class LoginContainer extends StoreAwareComponent {
   /**
    * Constructor.
    *
@@ -18,7 +20,19 @@ class LoginContainer extends React.Component {
     super(props, context, updater);
   }
 
+  /**
+   * Map redux state data to props.
+   * @param state
+   * @returns {*}
+   */
+  static redux (state) {
+    return {
+      login: state.login,
+    };
+  }
+
   onSignIn(loginData) {
+    this.dispatch('TEST', {hallo:"Welt"});
     console.log(loginData);
   }
 
@@ -36,4 +50,4 @@ class LoginContainer extends React.Component {
   }
 }
 
-export default LoginContainer;
+export default connect(LoginContainer.redux)(LoginContainer);
