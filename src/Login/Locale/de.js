@@ -6,5 +6,9 @@ export default {
 
   button: {
     submit: 'Einloggen'
+  },
+
+  title: {
+    main: "Admin-Login"
   }
 };

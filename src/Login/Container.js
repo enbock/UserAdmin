@@ -1,5 +1,8 @@
 import React from 'react';
 import Translator from '../Shared/Translator';
+import "./Style/Login.less";
+import "./Style/LoginForm.less";
+import Form from '../Shared/View/Form';
 
 /**
  * Application.
@@ -22,7 +25,7 @@ class LoginContainer extends React.Component {
    * @param event
    */
   onSubmit(event) {
-    console.log(event);
+    console.log(this, event);
   }
 
   /**
@@ -32,15 +35,15 @@ class LoginContainer extends React.Component {
    */
   render() {
     return (
-      <div>
-        <h1>Hello Login</h1>
-        <form onSubmit={this.onSubmit}>
-          <label>{Translator('login.label.name')} :</label>
-          <input/>
-          <label>{Translator('login.label.password')} :</label>
-          <input/>
-          <button>{Translator('login.button.submit')}</button>
-        </form>
+      <div className="login-domain">
+        <div className="form">
+          <h1>{Translator('login.title.main')}</h1>
+          <form onSubmit={this.onSubmit.bind(this)}>
+            <Form.Input label={Translator('login.label.name')}/>
+            <Form.Input label={Translator('login.label.password')}/>
+            <button>{Translator('login.button.submit')}</button>
+          </form>
+        </div>
       </div>
     );
   }
