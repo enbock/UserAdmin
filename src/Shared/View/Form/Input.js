@@ -18,13 +18,14 @@ class Input extends React.Component {
 
   /**
    * Define properties.
-   * @returns {{label: *, value: *}}
+   * @returns {Object}
    */
   static get propTypes() {
     return {
       label: PropTypes.string.isRequired,
       value: PropTypes.string,
-      onChange: PropTypes.func
+      onChange: PropTypes.func,
+      type: PropTypes.string
     };
   }
 
@@ -51,7 +52,11 @@ class Input extends React.Component {
     return (
       <div className="input-field">
         <label>{this.props.label}:</label>
-        <input onChange={this.onChange.bind(this)} value={this.state.value}/>
+        <input
+          type={this.props.type || 'text'}
+          onChange={this.onChange.bind(this)}
+          value={this.props.value}
+        />
       </div>
     );
   }

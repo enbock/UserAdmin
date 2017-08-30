@@ -1,8 +1,7 @@
 import React from 'react';
-import Translator from '../Shared/Translator';
 import "./Style/Login.less";
-import "./Style/LoginForm.less";
-import Form from '../Shared/View/Form';
+import "./Style/SignInForm.less";
+import SignInForm from "./View/SignInForm";
 
 /**
  * Application.
@@ -19,13 +18,8 @@ class LoginContainer extends React.Component {
     super(props, context, updater);
   }
 
-  /**
-   * Handler for form submit.
-   *
-   * @param event
-   */
-  onSubmit(event) {
-    console.log(this, event);
+  onSignIn(loginData) {
+    console.log(loginData);
   }
 
   /**
@@ -36,14 +30,7 @@ class LoginContainer extends React.Component {
   render() {
     return (
       <div className="login-domain">
-        <div className="form">
-          <h1>{Translator('login.title.main')}</h1>
-          <form onSubmit={this.onSubmit.bind(this)}>
-            <Form.Input label={Translator('login.label.name')}/>
-            <Form.Input label={Translator('login.label.password')}/>
-            <button>{Translator('login.button.submit')}</button>
-          </form>
-        </div>
+        <SignInForm onSubmit={this.onSignIn.bind(this)}/>
       </div>
     );
   }
