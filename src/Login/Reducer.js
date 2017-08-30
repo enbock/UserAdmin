@@ -1,10 +1,14 @@
 import React from "react";
+import Event from "./Event";
 
 /**
  * State data storage of login domain.
  */
 const storage = {
-
+  /**
+   * Login and registration customers data.
+   */
+  accountData: {}
 };
 
 /**
@@ -28,8 +32,8 @@ class Reducer {
     let update = {};
 
     switch (event.type) {
-      case 'TEST': {
-        update = event.data;
+      case Event.SIGN_IN: {
+        update.accountData = event.data;
       }
     }
     return this._addState(state, update);

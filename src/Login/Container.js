@@ -4,6 +4,7 @@ import "./Style/SignInForm.less";
 import SignInForm from "./View/SignInForm";
 import {connect} from "react-redux";
 import StoreAwareComponent from "../Shared/StoreAwareComponent";
+import Event from "./Event";
 
 /**
  * Application.
@@ -25,15 +26,14 @@ class LoginContainer extends StoreAwareComponent {
    * @param state
    * @returns {*}
    */
-  static redux (state) {
+  static redux(state) {
     return {
       login: state.login,
     };
   }
 
   onSignIn(loginData) {
-    this.dispatch('TEST', {hallo:"Welt"});
-    console.log(loginData);
+    this.dispatch(Event.SIGN_IN, loginData);
   }
 
   /**
