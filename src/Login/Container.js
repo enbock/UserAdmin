@@ -5,6 +5,7 @@ import SignInForm from "./View/SignInForm";
 import {connect} from "react-redux";
 import StoreAwareComponent from "../Shared/StoreAwareComponent";
 import Event from "./Event";
+import Action from "./Action";
 
 /**
  * Application.
@@ -44,6 +45,7 @@ class LoginContainer extends StoreAwareComponent {
   render() {
     return (
       <div className="login-domain">
+        <Action />
         <SignInForm onSubmit={this.onSignIn.bind(this)}/>
       </div>
     );

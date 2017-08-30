@@ -4,3 +4,4 @@
 /tests/_coverage/
 docker-compose-local.yml
 /UserAdminBackend/
+/config/dev.js

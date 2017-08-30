@@ -11,6 +11,15 @@ services:
         command: ["bash","-c", "npm install && npm start"]
         working_dir: /project
 
+    backend:
+        build: UserAdminBackend
+        container_name: apache-user-admin
+        image: enbock/user-admin-backend
+        volumes:
+            - .:/var/www
+        ports:
+             - "8090:80"
+
 networks:
     default:
         external:

@@ -2,12 +2,14 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import Login from '../Login';
+import Reducer from "./Reducer";
 
 /**
  * Collect reducers of complete project.
  * @type {Object}
  */
 const reducers = {
+  global: Reducer,
   login: Login.Reducer
 };
 

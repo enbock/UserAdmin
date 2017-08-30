@@ -2,17 +2,17 @@ import React from "react";
 import Event from "./Event";
 
 /**
- * State data storage of login domain.
+ * State data storage of global domain.
  */
 const storage = {
   /**
-   * Login and registration customers data.
+   * Session Id
    */
-  accountData: {}
+  session: ""
 };
 
 /**
- * The reducer of the login domain.
+ * The reducer of the global domain.
  * Set the state data on the store by incoming events.
  *
  * @param state
@@ -32,8 +32,8 @@ class Reducer {
     let update = {};
 
     switch (event.type) {
-      case Event.SIGN_IN:
-        update.accountData = event.data;
+      case Event.SESSION_UPDATE:
+        update.session = event.data;
         break;
     }
     return this._addState(state, update);

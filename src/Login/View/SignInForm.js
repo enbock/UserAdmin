@@ -45,6 +45,7 @@ class SignInForm extends React.Component {
         password: this.state.password
       }
     );
+    event.preventDefault();
   }
 
   /**
